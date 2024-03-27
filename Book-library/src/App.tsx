@@ -8,15 +8,22 @@ import { useState } from 'react'
 
 function App() {
   const [isActive, setIsActive] = useState(false);
+  const [titleBook, setTitleBook] = useState('')
+  const [authorBook, setAuthorBook] = useState('')
+  const [numberPagesBook, setNumberPagesBook] = useState(0)
+  const [readBook, setReadBook] = useState(false)
+  const [book, setBook] = useState([])
   
+
   const handleClick = () => {
     setIsActive(!isActive); 
   };
   return (
     <div className="container">
       <Header handleClick={handleClick}/>
-      <BookList />
-      <BookForm isAcitve={isActive} handleClick={handleClick}/> 
+      <BookList book={book}/>
+      <BookForm setBook={setBook} isActive={isActive} handleClick={handleClick} titleBook={titleBook} setTitleBook={setTitleBook} authorBook={authorBook} setAuthorBook={setAuthorBook}
+      numberPagesBook={numberPagesBook} setNumberPagesBook={setNumberPagesBook} readBook={readBook} setReadBook={setReadBook}/> 
       <Overlay/>
       <Footer />
     </div>

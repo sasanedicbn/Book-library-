@@ -1,6 +1,5 @@
-import { Props } from "./Typescript";
 
-const Header = ({ handleClick }:Props) => {
+const Header = ({ handleClick }:{ handleClick: () => void;}) => {
   return (
     <div className="text__div">
       <h1 className="heading__primary">
