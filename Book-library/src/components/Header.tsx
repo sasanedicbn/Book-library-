@@ -1,8 +1,6 @@
-type HeaderProps = {
-  handleClick: () => void;
-}
+import { Props } from "./Typescript";
 
-const Header = ({ handleClick }:HeaderProps) => {
+const Header = ({ handleClick }:Props) => {
   return (
     <div className="text__div">
       <h1 className="heading__primary">
