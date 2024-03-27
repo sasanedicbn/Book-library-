@@ -1,6 +1,6 @@
 function BookForm() {
     return (
-      <form className="formado hidden">
+      <form className="forma">
         <div className="form__box">
           <label htmlFor="title">Title of the book:</label>
           <input type="text" id="title" name="title" placeholder="Harry Potter" required />
