@@ -2,6 +2,7 @@ import './App.css'
 import Header from './components/Header'
 import BookForm from './components/BookForm'
 import BookList from './components/BookList'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
      <Header/>
      <BookForm/>
      <BookList/>
-
+     <Footer/>
     </>
   )
 }
