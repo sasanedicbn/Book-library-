@@ -1,4 +1,4 @@
-function Header() {
+function Header({handleClick}) {
     return (
       <div className="text__div">
         <h1 className="heading__primary">
@@ -8,7 +8,7 @@ function Header() {
           Use the button below to add to your library and watch your collection
           grow
         </p>
-        <button className="btn button__new__book">New Book</button>
+        <button className="btn button__new__book" onClick={handleClick}>New Book</button>
       </div>
     );
   }

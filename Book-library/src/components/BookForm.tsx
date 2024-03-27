@@ -1,6 +1,6 @@
-function BookForm() {
+function BookForm({isAcitve, handleClick}) {
     return (
-      <form className="forma">
+      <form className={isAcitve ?   'show' : 'formado' }>
         <div className="form__box">
           <label htmlFor="title">Title of the book:</label>
           <input type="text" id="title" name="title" placeholder="Harry Potter" required />
@@ -18,7 +18,7 @@ function BookForm() {
           <label className="check__label" htmlFor="subscribeNews">Have you read this book?</label>
           <input className="submit" id="submit" type="submit" />
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" className="close__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        <svg onClick={handleClick} xmlns="http://www.w3.org/2000/svg" className="close__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
