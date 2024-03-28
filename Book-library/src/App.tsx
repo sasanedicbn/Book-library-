@@ -21,6 +21,7 @@ function App() {
   const handleClick = () => {
     setIsActive(!isActive); 
   };
+
   return (
     <div className="container">
       <Header handleClick={handleClick}/>
