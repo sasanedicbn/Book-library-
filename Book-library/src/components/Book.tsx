@@ -1,12 +1,12 @@
 
-const Book = ({ book }) => {
+const Book = ({ book,readBook}) => {
   return (
     <div className="book">
-      <div className="title">{book.title}</div>
-      <div className="author">{book.author}</div>
-      <div className="numOfPages">{book.numberPages} pages</div>
+      <div className="title">Title: {book.title}</div>
+      <div className="author">Author: {book.author}</div>
+      <div className="numOfPages">Number Pages: {book.numberPages} </div>
       <div className="btns">
-        <button>Read</button>
+        <button>{readBook ? 'Read' : 'Not read'}</button>
         <button>Edit</button>
         <button>Delete</button>
       </div>

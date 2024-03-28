@@ -6,7 +6,7 @@ function BookList({ book }) {
         <div className="list__div">
             <ul className="ul__list">
                 {book.map((book) => (
-                    <Book key={book.id} book={book} />
+                    <Book key={book.id} book={book} readBook={book.readBook} />
                 ))}
             </ul>
         </div>
