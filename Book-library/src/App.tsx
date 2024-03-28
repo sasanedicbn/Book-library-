@@ -8,6 +8,7 @@ import { useState } from 'react'
 
 function App() {
   const [isActive, setIsActive] = useState(false);
+  // mogao sam mzd ovo i u book prebaciti htio sam setisactive na false jer kad unesem podatke hocu da nestanu inputi
   const [titleBook, setTitleBook] = useState('')
   const [authorBook, setAuthorBook] = useState('')
   const [numberPagesBook, setNumberPagesBook] = useState(0)

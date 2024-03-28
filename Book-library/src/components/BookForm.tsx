@@ -12,6 +12,7 @@ function BookForm({isActive, setBook, handleClick, titleBook, setTitleBook, auth
             readBook: readBook
         };
         setBook(prevBooks => [...prevBooks, newBook]);
+        handleClick()
     };
 
     return (
