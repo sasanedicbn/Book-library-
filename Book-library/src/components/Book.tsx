@@ -1,7 +1,7 @@
 
 const Book = ({ book,readBook,onDelete}) => {
  function handleDelete () {
-    onDelete()
+    onDelete(book.id)
  }
   return (
     <div className="book">
@@ -11,7 +11,7 @@ const Book = ({ book,readBook,onDelete}) => {
       <div className="btns">
         <button>{readBook ? 'Read' : 'Not read'}</button>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
   );
