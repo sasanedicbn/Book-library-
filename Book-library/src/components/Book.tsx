@@ -1,5 +1,8 @@
 
-const Book = ({ book,readBook}) => {
+const Book = ({ book,readBook,onDelete}) => {
+ function handleDelete () {
+    onDelete()
+ }
   return (
     <div className="book">
       <div className="title">Title: {book.title}</div>

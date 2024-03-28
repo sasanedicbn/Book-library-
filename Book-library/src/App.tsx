@@ -14,6 +14,9 @@ function App() {
   const [readBook, setReadBook] = useState(false)
   const [book, setBook] = useState([])
   
+  const handleDeleteBook = (id) => {
+     setBook((prevBooks) => prevBooks.filter((book) => book.id !== id))
+  }
 
   const handleClick = () => {
     setIsActive(!isActive); 
@@ -21,7 +24,7 @@ function App() {
   return (
     <div className="container">
       <Header handleClick={handleClick}/>
-      <BookList book={book} readBook={readBook}/>
+      <BookList book={book} readBook={readBook} handleDeleteBook={handleDeleteBook}/>
       <BookForm setBook={setBook} isActive={isActive} handleClick={handleClick} titleBook={titleBook} setTitleBook={setTitleBook} authorBook={authorBook} setAuthorBook={setAuthorBook}
       numberPagesBook={numberPagesBook} setNumberPagesBook={setNumberPagesBook} readBook={readBook} setReadBook={setReadBook}/> 
       <Overlay/>
