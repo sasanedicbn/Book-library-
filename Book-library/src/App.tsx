@@ -17,9 +17,7 @@ function App() {
   const handleDeleteBook = (id) => {
      setBook((prevBooks) => prevBooks.filter((book) => book.id !== id))
   }
-  // const handleToggleRead = (id) => {
-  //   setReadBook((toggleBooks) => toggleBooks.filter((book) => book.id === id && !readBook))
-  // }
+ 
   const handleToggleRead = (id) => {
     setBook((prevBooks) =>
         prevBooks.map((book) =>
