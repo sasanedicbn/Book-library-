@@ -17,15 +17,23 @@ function App() {
   const handleDeleteBook = (id) => {
      setBook((prevBooks) => prevBooks.filter((book) => book.id !== id))
   }
-
+  
+  const handleToggleRead = (id) => {
+    setBook((prevBooks) =>
+        prevBooks.map((book) =>
+            book.id === id ? { ...book, readBook: !book.readBook } : book
+        )
+    );
+};
   const handleClick = () => {
     setIsActive(!isActive); 
   };
 
+
   return (
     <div className="container">
       <Header handleClick={handleClick}/>
-      <BookList book={book} readBook={readBook} handleDeleteBook={handleDeleteBook}/>
+      <BookList book={book} readBook={readBook} handleDeleteBook={handleDeleteBook} handleToggleRead={handleToggleRead}/>
       <BookForm setBook={setBook} isActive={isActive} handleClick={handleClick} titleBook={titleBook} setTitleBook={setTitleBook} authorBook={authorBook} setAuthorBook={setAuthorBook}
       numberPagesBook={numberPagesBook} setNumberPagesBook={setNumberPagesBook} readBook={readBook} setReadBook={setReadBook}/> 
       <Overlay/>
