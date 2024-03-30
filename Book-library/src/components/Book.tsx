@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
+import { PropsBook } from "./Typescript";
 
-const Book = ({ book, readBook, onDelete, handleToggleRead, onEditBook }) => {
+const Book = ({ book, readBook, onDelete, handleToggleRead, onEditBook }:PropsBook) => {
   const [showInput, setShowInput] = useState(false);
   const [title, setTitle] = useState(book.title);
   const [author, setAuthor] = useState(book.author);

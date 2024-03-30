@@ -13,3 +13,18 @@ export type Input ={
     readBook: boolean,
     setBook: React.Dispatch<React.SetStateAction<any[]>>,
 }
+
+export type BookType = {
+  id: number;
+  title: string;
+  author: string;
+  numberPages: number;
+  readBook: boolean;
+}
+export type PropsBook = {
+  book: BookType;
+  readBook: boolean;
+  onDelete: (id: number) => void;
+  handleToggleRead: (id: number) => void;
+  onEditBook: (updatedBook: BookType) => void;
+};

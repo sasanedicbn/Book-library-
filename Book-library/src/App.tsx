@@ -14,7 +14,7 @@ type Book = {
   readBook: boolean;
 }
 
-const App: React.FC = () => {
+const App = () => {
   const [isActive, setIsActive] = useState(false);
   const [titleBook, setTitleBook] = useState('');
   const [authorBook, setAuthorBook] = useState('');
