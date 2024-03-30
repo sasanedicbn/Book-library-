@@ -1,11 +1,11 @@
 import Book from "./Book";
-import { BookType } from "./Typescript";
+import { BookListProps, BookType } from "./Typescript";
 
 function BookList({ book, handleDeleteBook, handleToggleRead, onEditBook }: BookListProps) {
   return (
     <div className="list__div">
       <ul className="ul__list">
-        {book.map((book) => (
+        {book.map((book: BookType) => (
           <Book 
             key={book.id} 
             book={book} 
