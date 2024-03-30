@@ -5,7 +5,7 @@ function BookList({ book, handleDeleteBook, handleToggleRead, onEditBook }: Book
   return (
     <div className="list__div">
       <ul className="ul__list">
-        {book.map((book: BookType) => (
+        {book.map((book:BookType) => (
           <Book 
             key={book.id} 
             book={book} 

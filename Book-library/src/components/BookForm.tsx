@@ -14,7 +14,8 @@ function BookForm({isActive, setBook, handleClick, titleBook, setTitleBook, auth
         setBook(prevBooks => [...prevBooks, newBook]);
         handleClick()
         const header = document.querySelector('.text__div');
-        header.classList.add('up');
+        if(header){
+        header.classList.add('up')}
     };
 
     return (
