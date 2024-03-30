@@ -1,6 +1,7 @@
 export type Props = Input & {
     handleClick: () => void;
     isActive?: boolean;
+    setReadBook: React.Dispatch<React.SetStateAction<boolean>>,
   }
 
 export type Input ={
@@ -20,7 +21,7 @@ export type BookType = {
   author: string;
   numberPages: number;
   readBook: boolean;
-}
+}[]
 export type PropsBook = {
   book: BookType;
   readBook: boolean;

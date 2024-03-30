@@ -5,14 +5,8 @@ import BookForm from './components/BookForm';
 import BookList from './components/BookList';
 import Footer from './components/Footer';
 import Overlay from './components/Overlay';
+import { BookType } from './components/Typescript';
 
-type Book = {
-  id: number;
-  title: string;
-  author: string;
-  numberPages: number;
-  readBook: boolean;
-}
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
@@ -20,7 +14,7 @@ const App = () => {
   const [authorBook, setAuthorBook] = useState('');
   const [numberPagesBook, setNumberPagesBook] = useState(0);
   const [readBook, setReadBook] = useState(false);
-  const [book, setBook] = useState<Book[]>([]);
+  const [book, setBook] = useState<BookType[]>([]);
 
   const handleDeleteBook = (id: number) => {
     setBook(prevBooks => prevBooks.filter(book => book.id !== id));
@@ -34,7 +28,7 @@ const App = () => {
     );
   };
 
-  const handleEditBook = (updatedBook: Book) => {
+  const handleEditBook = (updatedBook: BookType) => {
     setBook(prevBooks =>
       prevBooks.map(book =>
         book.id === updatedBook.id ? updatedBook : book
