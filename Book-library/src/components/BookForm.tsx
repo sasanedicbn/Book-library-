@@ -5,7 +5,7 @@ function BookForm({isActive, setBook, handleClick, titleBook, setTitleBook, auth
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
         const newBook = {
-            id: Math.floor(Math.random() * 100000),
+            id: crypto.randomUUID(),
             title: titleBook,
             author: authorBook,
             numberPages: numberPagesBook,

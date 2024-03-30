@@ -50,6 +50,7 @@ const App = () => {
         onEditBook={handleEditBook}
       />
       <BookForm
+        book={book}
         setBook={setBook}
         isActive={isActive}
         handleClick={handleClick}
