@@ -1,8 +1,7 @@
-import React from "react";
 import Book from "./Book";
-import { Input } from "./Typescript";
+import { BookType } from "./Typescript";
 
-function BookList({ book, handleDeleteBook, handleToggleRead, onEditBook }: Input) {
+function BookList({ book, handleDeleteBook, handleToggleRead, onEditBook }: BookListProps) {
   return (
     <div className="list__div">
       <ul className="ul__list">

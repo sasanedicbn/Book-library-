@@ -28,3 +28,9 @@ export type PropsBook = {
   handleToggleRead: (id: number) => void;
   onEditBook: (updatedBook: BookType) => void;
 };
+export type BookListProps = {
+  book: BookType,
+  handleDeleteBook: (id: number) => void,
+  handleToggleRead: (id: number) => void,
+  onEditBook: (updatedBook: BookType) => void
+}
