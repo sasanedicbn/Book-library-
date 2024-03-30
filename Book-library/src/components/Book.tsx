@@ -1,21 +1,81 @@
+import React, { useState } from "react";
 
-const Book = ({ book,readBook,onDelete, handleToggleRead}) => {
- function handleDelete () {
-    onDelete(book.id)
- }
- function handleUpdateRead(){
-    handleToggleRead(book.id)
- }
- 
+const Book = ({ book, readBook, onDelete, handleToggleRead, onEditBook }) => {
+  const [showInput, setShowInput] = useState(false);
+  const [title, setTitle] = useState(book.title);
+  const [author, setAuthor] = useState(book.author);
+  const [numberPages, setNumberPages] = useState(book.numberPages);
+
+  const handleEdit = () => {
+    setShowInput(true);
+  };
+
+  const handleSave = () => {
+    const updatedBook = {
+      ...book,
+      title: title,
+      author: author,
+      numberPages: numberPages
+    };
+    onEditBook(updatedBook);
+    setShowInput(false);
+  };
+
+  const handleClose = () => {
+    setTitle(book.title);
+    setAuthor(book.author);
+    setNumberPages(book.numberPages);
+    setShowInput(false);
+  };
+
   return (
     <div className="book">
-      <div className="title">Title: {book.title}</div>
-      <div className="author">Author: {book.author}</div>
-      <div className="numOfPages">Number Pages: {book.numberPages} </div>
+      <div className="title">
+        Title: {showInput ? (
+          <input 
+            type="text" 
+            value={title} 
+            onChange={(e) => setTitle(e.target.value)} 
+          />
+        ) : (
+          book.title
+        )}
+      </div>
+      <div className="author">
+        Author: {showInput ? (
+          <input 
+            type="text" 
+            value={author} 
+            onChange={(e) => setAuthor(e.target.value)} 
+          />
+        ) : (
+          book.author
+        )}
+      </div>
+      <div className="numOfPages">
+        Number Pages: {showInput ? (
+          <input 
+            type="number" 
+            value={numberPages} 
+            onChange={(e) => setNumberPages(parseInt(e.target.value))} 
+          />
+        ) : (
+          book.numberPages
+        )}
+      </div>
       <div className="btns">
-        <button onClick={handleUpdateRead}>{readBook ? 'Read' : 'Not read'}</button>
-        <button>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
+        {showInput ? (
+          <>
+            <button onClick={handleSave}>Save</button>
+            <button onClick={handleClose}>Close</button>
+          </>
+        ) : (
+          <>
+            <button onClick={handleEdit}>Edit</button>
+            <button onClick={() => handleToggleRead(book.id)}>{readBook ? 'Read' : 'Not read'}</button>
+            <button onClick={() => onDelete(book.id)}>Delete</button>
+          </>
+        )}
       </div>
     </div>
   );

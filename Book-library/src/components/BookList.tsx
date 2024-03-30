@@ -1,18 +1,24 @@
+import React from "react";
 import Book from "./Book";
+import { Input } from "./Typescript";
 
-
-function BookList({ book, handleDeleteBook,  handleToggleRead }){
-    console.log(book);
-    return (
-        <div className="list__div">
-            <ul className="ul__list">
-                {book.map((book) => (
-                    <Book key={book.id} book={book} readBook={book.readBook} handleToggleRead={handleToggleRead} onDelete={handleDeleteBook} />
-                ))}
-            </ul>
-        </div>
-    );
+function BookList({ book, handleDeleteBook, handleToggleRead, onEditBook }: Input) {
+  return (
+    <div className="list__div">
+      <ul className="ul__list">
+        {book.map((book) => (
+          <Book 
+            key={book.id} 
+            book={book} 
+            readBook={book.readBook} 
+            handleToggleRead={handleToggleRead} 
+            onDelete={handleDeleteBook} 
+            onEditBook={onEditBook} 
+          />
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-  export default BookList;
- 
+export default BookList;

@@ -1,5 +1,5 @@
+import  { useState } from 'react';
 import './App.css'
-import React, { useState } from 'react';
 import Header from './components/Header';
 import BookForm from './components/BookForm';
 import BookList from './components/BookList';
@@ -8,9 +8,9 @@ import Overlay from './components/Overlay';
 
 type Book = {
   id: number;
-  titleBook: string;
-  authorBook: string;
-  numberPagesBook: number;
+  title: string;
+  author: string;
+  numberPages: number;
   readBook: boolean;
 }
 
@@ -34,6 +34,14 @@ const App: React.FC = () => {
     );
   };
 
+  const handleEditBook = (updatedBook: Book) => {
+    setBook(prevBooks =>
+      prevBooks.map(book =>
+        book.id === updatedBook.id ? updatedBook : book
+      )
+    );
+  };
+
   const handleClick = () => {
     setIsActive(!isActive);
   };
@@ -45,6 +53,7 @@ const App: React.FC = () => {
         book={book}
         handleDeleteBook={handleDeleteBook}
         handleToggleRead={handleToggleRead}
+        onEditBook={handleEditBook}
       />
       <BookForm
         setBook={setBook}
